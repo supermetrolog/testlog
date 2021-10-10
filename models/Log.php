@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
+
 
 /**
  * This is the model class for table "log".
@@ -46,5 +48,17 @@ class Log extends \yii\db\ActiveRecord
             'type' => 'Type',
             'message' => 'Message',
         ];
+    }
+
+    public static function getTypeListForSelect()
+    {
+    //    $fuck=  ArrayHelper::map(self::find()->orderBy(['type' => SORT_ASC])->asArray()->all(), 'type', 'type');
+        
+       var_dump($fuck);
+       $typeList = [];
+       for ($i=1; $i <= 10; $i++) { 
+           $typeList[$i] = (string)$i;
+       }
+       return $typeList;
     }
 }

@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ts',
             [
                 'attribute' => 'type',
-                'filter'=>ArrayHelper::map(Log::find()->orderBy(['type' => SORT_ASC])->asArray()->all(), 'type', 'type'),
+                'filter'=>Log::getTypeListForSelect(),
             ],
             'message',
             
